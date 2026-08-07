@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ODR - Personagens</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/personagens.css">
+    <link href="https://fonts.googleapis.com/css2?family=Blaka&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="menu-icon">
+            <span>&#9776;</span>
+        </div>
+        
+        <div class="logo-container">
+            <img src="../assets/castle.png" alt="Logo Dragão" class="logo-img">
+            <h1 class="logo-text">ODR</h1>
+        </div>
+
+        <div class="user-profile">
+            <img src="../assets/account.png" alt="Ícone Usuário" class="user-icon">
+            <span class="username">suzy</span>
+        </div>
+    </header>
+
+    <!-- conteúdo da page de fichas -->
+    <main class="main-content">
+        <h2 class="page-title">PERSONAGENS</h2>
+
+        <!-- container dos card de personagem -->
+        <div class="char-cards-container">
+            
+            <!-- CARD 1: Personagem Existente -->
+            <article class="char-card">
+                <div class="char-avatar">
+                    <img src="../assets/account.png" alt="Avatar Personagem">
+                </div>
+                
+                <h3 class="char-name">XXXX XX XXXXX</h3>
+                <p class="char-class">XXXXX XXXXX XXX</p>
+                
+                <button class="card-btn">ABRIR FICHA</button>
+            </article>
+
+            <!-- CARD 2: Nova Ficha -->
+            <article class="char-card new-char">
+                <div class="char-avatar faded">
+                    <img src="../assets/account.png" alt="Novo Personagem">
+                </div>
+                
+                <div class="new-char-plus">+</div>
+                
+                <button class="card-btn" onclick="window.location.href='ficha.html'">NOVA FICHA</button>
+            </article>
+
+        </div>
+    </main>
+
+    <img src="../assets/ODR_2m.png" alt="Logo ODR Lobo" class="watermark-logo">
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+/* =========================================
+   ESTILOS GERAIS E RESETS
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* fundo base sólido que vai aparecer por baixo da textura transparente */
+    background-color: #be975c; 
+    
+    font-family: 'Blaka', cursive;
+    color: #53361e;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* camada invisível criada apenas para controlar a opacidade da imagem */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* joga a textura para trás de tudo */
+    
+    background-image: url('../assets/paperfundo.png'); 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3; 
+}
+
+/* =========================================
+   NAVBAR (CABEÇALHO)
+   ========================================= */
+.navbar {
+    background-color: rgba(184, 145, 95, 0.85);
+    border-bottom: 2px solid #3d2616;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.menu-icon span {
+    font-size: 30px;
+    color: #3d2616;
+    cursor: pointer;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img { height: 40px; }
+
+.logo-text {
+    font-family: 'Blaka', cursive;
+    font-size: 36px;
+    color: #3d2616;
+    letter-spacing: 2px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-icon { height: 35px; }
+
+.username {
+    font-family: 'Blaka', cursive;
+    font-size: 28px;
+    color: #3d2616;
+}
+
+/* =========================================
+   MARCA D'ÁGUA INFERIOR DIREITA
+   ========================================= */
+.watermark-logo {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    height: 100px;
+    opacity: 0.7;
+}

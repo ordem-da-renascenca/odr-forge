@@ -21,7 +21,7 @@
 /* LADO ESQUERDO */
 .login-left {
     flex: 1; /* ocupa 50% da tela */
-    background-image: url('../assets/paperfundo.png');
+    background-image: url('../../assets/paperfundo.png');
     background-size: cover;
     background-position: center;
     display: flex;

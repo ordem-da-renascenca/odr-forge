@@ -28,7 +28,7 @@
 }
 
 .card {
-    background-image: url('../assets/fundoquadrado.png');
+    background-image: url('../../assets/fundoquadrado.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-color: transparent;
@@ -121,7 +121,7 @@
 
 /* card personagem */
 .char-card {
-    background-image: url('../assets/moldura2.png');
+    background-image: url('../../assets/moldura2.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-color: transparent; 

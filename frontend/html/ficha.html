@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ODR - Ficha do Personagem</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/ficha.css">
+    <link href="https://fonts.googleapis.com/css2?family=Blaka&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR PADRÃO -->
+    <header class="navbar">
+        <div class="menu-icon"><span>&#9776;</span></div>
+        <div class="logo-container">
+            <img src="../assets/castle.png" alt="Logo Dragão" class="logo-img">
+            <h1 class="logo-text">ODR</h1>
+        </div>
+        <div class="user-profile">
+            <img src="../assets/account.png" alt="Ícone Usuário" class="user-icon">
+            <span class="username">suzy</span>
+        </div>
+    </header>
+
+<main class="ficha-content three-col-layout">
+        
+        <!-- ========================================== -->
+        <!-- COLUNA 1: ESQUERDA -->
+        <!-- ========================================== -->
+        <aside class="sidebar-left">
+            <!-- Header -->
+            <section class="ficha-header">
+                <div class="ficha-avatar-box">
+                    <img src="../assets/account.png" alt="Avatar">
+                </div>
+                <div class="ficha-names">
+                    <div class="name-group">
+                        <label>Nome do jogador</label>
+                        <input type="text" value="Suzy" class="line-input">
+                    </div>
+                    <div class="name-group">
+                        <label>Nome do Personagem</label>
+                        <input type="text" value="xxxx xxx" class="line-input">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nível e XP -->
+            <div class="level-box">
+                <h3 class="blaka-title">NÍVEL: XX</h3>
+                <div class="xp-bar"></div>
+                <span class="xp-text">XP: XXX / XXX</span>
+            </div>
+
+            <!-- Vida e Mana -->
+            <div class="status-box">
+                <h3 class="blaka-title">VIDA</h3>
+                <div class="bar-row">
+                    <div class="status-bar health-bar">
+                        <input type="text" value="XXX / XXX" class="bar-input">
+                    </div>
+                    <div class="bar-icon"><span class="icon-heart">♥</span></div>
+                </div>
+
+                <h3 class="blaka-title mt-10">MANA</h3>
+                <div class="bar-row">
+                    <div class="status-bar mana-bar">
+                        <input type="text" value="XXX / XXX" class="bar-input">
+                    </div>
+                    <div class="bar-icon"><span class="icon-potion">💧</span></div>
+                </div>
+            </div>
+
+            <!-- Reputação -->
+            <div class="reputacao-box">
+                <h3 class="blaka-title">REPUTAÇÃO</h3>
+                <input type="range" min="-100" max="100" value="0" class="reputacao-slider" id="repSlider">
+                <div class="rep-display"><span id="repValor">0</span></div>
+            </div>
+
+            <!-- Classe e Subclasse -->
+            <div class="class-info mt-10">
+                <div class="name-group">
+                    <label>Classe:</label>
+                    <input type="text" value="xxxx" class="line-input">
+                </div>
+                <div class="name-group mt-10">
+                    <label>Subclasse:</label>
+                    <input type="text" value="xxxx" class="line-input">
+                </div>
+            </div>
+        </aside>
+
+        <!-- ========================================== -->
+        <!-- COLUNA 2: CENTRO (Hexagrama) -->
+        <!-- ========================================== -->
+        <section class="diamond-grid central-grid">
+            <div class="grid-center">
+                <div class="diamond-item pos-tl black-diamond">
+                    <span class="outer-label label-tl">Corpo</span>
+                    <div class="diamond-shape"></div>
+                    <div class="diamond-content">
+                        <input type="text" value="18" class="diamond-val">
+                        <input type="text" value="(6d6)" class="diamond-sub">
+                    </div>
+                </div>
+                <div class="diamond-item pos-tr black-diamond">
+                    <span class="outer-label label-tr">Movimento</span>
+                    <div class="diamond-shape"></div>
+                    <div class="diamond-content">
+                        <input type="text" value="11" class="diamond-val">
+                        <input type="text" value="(2d12)" class="diamond-sub">
+                    </div>
+                </div>
+                <div class="diamond-item pos-l red-diamond">
+                    <div class="diamond-shape"></div>
+                    <div class="diamond-content">
+                        <input type="text" value="6" class="diamond-val">
+                        <input type="text" value="Bloqueio" class="diamond-text">
+                    </div>
+                </div>
+                <div class="diamond-item pos-center red-diamond">
+                    <div class="diamond-shape"></div>
+                    <div class="diamond-content">
+                        <input type="text" value="11" class="diamond-val">
+                        <input type="text" value="Defesa" class="diamond-text">
+                    </div>
+                </div>
+                <div class="diamond-item pos-r red-diamond">
+                    <div class="diamond-shape"></div>
+                    <div class="diamond-content">
+                        <input type="text" value="13" class="diamond-val">
+                        <input type="text" value="Esquiva" class="diamond-text">
+                    </div>
+                </div>
+                <div class="diamond-item pos-bl black-diamond">
+                    <span class="outer-label label-bl">Espirito</span>
+                    <div class="diamond-shape"></div>
+                    <div class="diamond-content">
+                        <input type="text" value="11" class="diamond-val">
+                        <input type="text" value="(2d12)" class="diamond-sub">
+                    </div>
+                </div>
+                <div class="diamond-item pos-br black-diamond">
+                    <span class="outer-label label-br">Mente</span>
+                    <div class="diamond-shape"></div>
+                    <div class="diamond-content">
+                        <input type="text" value="9" class="diamond-val">
+                        <input type="text" value="(3d6)" class="diamond-sub">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- COLUNA 3: DIREITA -->
+        <!-- ========================================== -->
+        <aside class="sidebar-right">
+            <!-- Vantagens -->
+            <div class="pergaminho-box">
+                <h2 class="old-title central-title">Vantagens</h2>
+                <div class="vantagens-grid">
+                    <div class="vantagem-row">
+                        <span class="vantagem-label">COR</span>
+                        <input type="checkbox" class="circle-check"><input type="checkbox" class="circle-check"><input type="checkbox" class="circle-check"><input type="checkbox" class="circle-check">
+                    </div>
+                    <div class="vantagem-row">
+                        <span class="vantagem-label">MEN</span>
+                        <input type="checkbox" class="circle-check"><input type="checkbox" class="circle-check"><input type="checkbox" class="circle-check"><input type="checkbox" class="circle-check">
+                    </div>
+                    <div class="vantagem-row">
+                        <span class="vantagem-label">ESP</span>
+                        <input type="checkbox" class="circle-check"><input type="checkbox" class="circle-check"><input type="checkbox" class="circle-check"><input type="checkbox" class="circle-check">
+                    </div>
+                    <div class="vantagem-row">
+                        <span class="vantagem-label">MOV</span>
+                        <input type="checkbox" class="circle-check"><input type="checkbox" class="circle-check"><input type="checkbox" class="circle-check"><input type="checkbox" class="circle-check">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resistências -->
+            <div class="pergaminho-box mt-30">
+                <h2 class="old-title central-title">Resistências</h2>
+                <div class="resistencias-list">
+                    <input type="text" class="line-input full-width">
+                    <input type="text" class="line-input full-width">
+                    <input type="text" class="line-input full-width">
+                    <input type="text" class="line-input full-width">
+                </div>
+            </div>
+        </aside>
+        <!-- FIM DA COLUNA DIREITA -->
+
+    </main>
+
+    <img src="../assets/ODR_2m.png" alt="Logo ODR Lobo" class="watermark-logo">
+    <script>
+        const slider = document.getElementById("repSlider");
+        const valorDisplay = document.getElementById("repValor");
+        slider.oninput = function() {
+            valorDisplay.innerHTML = this.value; // Pega o valor exato (-100 a 100) e joga na tela
+        }
+    </script>
+</body>
+</html>
+
+</body>
+</html>

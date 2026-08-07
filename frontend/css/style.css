@@ -1,0 +1,760 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* fundo base sólido que vai aparecer por baixo da textura transparente */
+    background-color: #be975c; 
+    
+    font-family: 'Blaka', cursive;
+    color: #53361e;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* camada invisível criada apenas para controlar a opacidade da imagem */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* joga a textura para trás de tudo */
+    
+    background-image: url('images/paperfundo.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3; 
+}
+
+/* NAVBAR (CABEÇALHO) */
+.navbar {
+    background-color: rgba(184, 145, 95, 0.85);
+    border-bottom: 2px solid #3d2616;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.menu-icon span {
+    font-size: 30px;
+    color: #3d2616;
+    cursor: pointer;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img { height: 40px; }
+
+.logo-text {
+    font-family: 'Blaka', cursive;
+    font-size: 36px;
+    color: #3d2616;
+    letter-spacing: 2px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-icon { height: 35px; }
+
+.username {
+    font-family: 'Blaka', cursive;
+    font-size: 28px;
+    color: #3d2616;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.page-title {
+    font-family: 'Blaka', cursive;
+    font-size: 60px;
+    color: #583720;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+    
+    text-shadow: 4px 4px 6px rgba(247, 227, 209, 0.6);
+}
+
+/* CONTAINER DOS CARD */
+.cards-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-image: url('images/fundoquadrado.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    
+    /* CONTROLA O TAMANHO === */
+    width: 500px;        
+    min-height: 550px;   
+    
+    padding: 70px 60px; 
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* CONTEÚDO INTERNO DO CARD */
+.card-icon img {
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.card-title {
+    font-family: 'Blaka', cursive;
+    font-size: 40px;
+    color: #2b1d12;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.card-desc {
+    font-size: 30px;
+    line-height: 1.5;
+    color: #8c6849;
+    margin-bottom: auto; 
+}
+
+/* BOTÃO */
+.card-btn {
+    background-color: #583720;
+    color: #e3cca6;
+    border: none;
+    padding: 12px 25px;
+    width: 100%;
+    font-family: 'Blaka', cursive;
+    font-size: 24px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-top: 25px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.2s ease;
+}
+
+.card-btn:hover {
+    background-color: #2b1d12;
+}
+
+/* MARCA D'ÁGUA INFERIOR DIREITA */
+.watermark-logo {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    height: 100px;
+    opacity: 0.7;
+}
+/* =========================================
+            PÁGINA DE PERSONAGENS 
+   ========================================= */
+
+.char-cards-container {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    align-self: flex-start; 
+    padding: 0 5%; 
+    
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+/* botão */
+.char-card .card-btn {
+    width: 80%; 
+    padding: 8px 15px; 
+    font-size: 20px; 
+    
+    margin-top: auto;
+    margin-bottom: 10px; 
+}
+
+/* card personagem */
+.char-card {
+    background-image: url('images/moldura2.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    
+    width: 320px;
+    height: 480px;
+    
+    padding: 30px 20px;
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.char-card:hover {
+    transform: translateY(-5px);
+}
+
+.char-avatar {
+    width: 120px;
+    height: 120px;
+    border: 8px solid #583720; /* Borda grossa escura */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #d2bba0;
+}
+.char-avatar img {
+    width: 70px;
+    filter: brightness(0) sepia(1) hue-rotate(330deg) saturate(3) brightness(0.3);
+}
+
+/* textos do card */
+.char-name {
+    font-family: 'Blaka', cursive;
+    font-size: 34px;
+    color: #3d2616;
+    letter-spacing: 2px;
+}
+
+.char-class {
+    font-family: 'Blaka', cursive;
+    font-size: 22px;
+    color: #8c6849;
+    margin-bottom: auto; 
+}
+
+/* =========================================
+              "NOVA FICHA" (+)
+   ========================================= */
+
+.char-avatar.faded {
+    border-color: #9c8266;
+}
+
+.char-avatar.faded img {
+    filter: brightness(0) sepia(1) hue-rotate(330deg) saturate(2) brightness(0.6);
+    opacity: 0.8;
+}
+
+/* (+) */
+.new-char-plus {
+    font-family: 'Blaka', cursive;
+    font-size: 150px;
+    color: #583720;
+    line-height: 1;
+    margin-bottom: auto;
+}
+/* =========================================
+            TELA DE LOGIN 
+   ========================================= */
+
+.login-body {
+    display: block; 
+    min-height: 100vh;
+    margin: 0;
+    background: none; 
+}
+.login-body::before {
+    display: none; 
+}
+
+.login-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+/* LADO ESQUERDO */
+.login-left {
+    flex: 1; /* ocupa 50% da tela */
+    background-image: url('images/paperfundo.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* card onde ficam os campos */
+.login-box {
+    background-color: rgba(204, 163, 114, 0.7); 
+    border-radius: 40px;
+    padding: 40px 60px;
+    width: 100%;
+    max-width: 550px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.login-logo {
+    height: 110px;
+    margin-bottom: 10px;
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.8));
+}
+
+.login-title {
+    font-family: 'Old English Text MT', 'Engravers Old English', 'UnifrakturMaguntia', cursive; 
+    font-size: 55px; 
+    color: #111;
+    line-height: 1.1;
+    margin-bottom: 5px;
+}
+
+.destaque-titulo {
+    color: #c09d73; 
+    -webkit-text-stroke: 0.6px #4e3727; 
+}
+
+.login-subtitle {
+    font-family: 'Blaka', cursive;
+    font-size: 22px;
+    color: #583720d8;
+    margin-bottom: 30px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input-group label {
+    font-family: 'Blaka', cursive;
+    font-size: 24px;
+    color: #583720;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.ribbon-input {
+    width: 100%;
+    height: 60px;
+    background-color: #caaf8e;
+    border: none;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 25px) 50%, 100% 100%, 0 100%, 25px 50%);
+    padding: 0 40px; /* garante que o texto digitado não fique em cima do corte */
+    font-family: 'Blaka', cursive;
+    font-size: 26px;
+    color: #2b1d12;
+    outline: none;
+}
+
+.ribbon-input:focus {
+    background-color: #b59268;
+}
+/* =========================================
+   CORRIGINDO O FUNDO BRANCO DO AUTOFILL
+   ========================================= */
+.ribbon-input:-webkit-autofill,
+.ribbon-input:-webkit-autofill:hover, 
+.ribbon-input:-webkit-autofill:focus, 
+.ribbon-input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 50px #d1b18a inset !important;
+    -webkit-text-fill-color: #2b1d12 !important;
+    font-family: 'Blaka', cursive !important;
+}
+
+/* botao */
+.login-btn {
+    background-color: #745737;
+    color: #111;
+    border: none;
+    padding: 15px;
+    font-family: 'Blaka', cursive;
+    font-size: 34px;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 4px 4px 5px rgba(0,0,0,0.3);
+    transition: background-color 0.2s ease;
+}
+
+.login-btn:hover {
+    background-color: #a6845c;
+}
+
+.login-links {
+    margin-top: 25px;
+    font-family: 'Blaka', cursive;
+    font-size: 24px;
+}
+
+.login-links a {
+    color: #583720;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.login-links a:hover {
+    color: #111;
+}
+
+/* LADO DIREITO - DESENHO JULY*/
+.login-right {
+    flex: 1; 
+    background-size: cover;
+    background-position: center;
+}
+/* =========================================
+   ESTILOS DA FICHA DE PERSONAGEM
+   ========================================= */
+.ficha-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Avatar e Nomes --- */
+.ficha-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    position: relative; 
+    z-index: 10; /* Garante que os inputs fiquem por cima da grade invisível */
+}
+
+.ficha-avatar-box {
+    width: 110px;
+    height: 110px;
+    border: 4px solid #4a3320;
+    padding: 5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Borda fina extra em volta do avatar */
+.ficha-avatar-box::after {
+    content: "";
+    position: absolute;
+    top: -8px; left: -8px; right: -8px; bottom: -8px;
+    border: 1px solid #4a3320;
+}
+
+.ficha-avatar-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ficha-names {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.name-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.name-group label {
+    font-family: 'Old English Text MT', 'Engravers Old English', cursive;
+    font-size: 20px;
+    color: #3d2616;
+}
+
+/* Campos de nome editáveis e com linha embaixo */
+.line-input {
+    border: none;
+    border-bottom: 2px solid #4a3320;
+    background: transparent;
+    font-family: 'Blaka', cursive;
+    font-size: 26px;
+    color: #2b1d12;
+    width: 350px;
+    outline: none;
+    padding-bottom: 2px;
+}
+
+/* --- Grade Hexagrama dos Losangos --- */
+.diamond-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    /* Reduzimos de 150px para 40px para subir a grade e centralizar melhor */
+    margin-top: -180px; 
+}
+
+.grid-center {
+    position: relative;
+    /* MÁGICA: Aumentamos o tamanho e a distância para a grade crescer junta */
+    --size: 150px;     /* Era 110px */
+    --offset: 116px;   /* Era 86px */
+}
+
+/* Aquele círculo fraquinho de marca d'água no fundo dos atributos */
+.grid-center::before {
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    /* Aumentamos o círculo de fundo para acompanhar os losangos maiores */
+    width: 650px; height: 650px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.05);
+    z-index: 0;
+}
+
+.diamond-item {
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    transform: translate(-50%, -50%); /* Garante que todos cresçam a partir do centro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+/* Coordenadas absolutas de cada losango */
+.pos-center { top: 0; left: 0; }
+.pos-tl { top: calc(var(--offset) * -1); left: calc(var(--offset) * -1); }
+.pos-tr { top: calc(var(--offset) * -1); left: var(--offset); }
+.pos-l  { top: 0; left: calc(var(--offset) * -2); }
+.pos-r  { top: 0; left: calc(var(--offset) * 2); }
+.pos-bl { top: var(--offset); left: calc(var(--offset) * -1); }
+.pos-br { top: var(--offset); left: var(--offset); }
+
+/* --- A forma do losango em si --- */
+.diamond-shape {
+    position: absolute;
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    transform: rotate(45deg); /* Gira o quadrado 45 graus para virar losango */
+    box-sizing: border-box;
+    border: 5px solid #d4bc96; /* Borda dourada/metálica */
+    box-shadow: inset 0 0 0 4px #1a1a1a, 4px 4px 10px rgba(0,0,0,0.5); /* Borda interna e sombra 3D */
+    z-index: 1;
+}
+
+.black-diamond .diamond-shape { background-color: #1c1c1c; }
+.red-diamond .diamond-shape { background-color: #990000; }
+
+/* Conteúdo de dentro (desgirado para o texto ficar reto) */
+.diamond-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* --- Textos Editáveis de Dentro --- */
+.diamond-val {
+    font-family: 'Old English Text MT', 'Engravers Old English', cursive;
+    font-size: 55px; /* Aumentado de 42px */
+    color: #fff;
+    background: transparent;
+    border: none;
+    width: 90%;
+    text-align: center;
+    outline: none;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    margin-bottom: -5px;
+}
+
+.diamond-sub {
+    font-family: 'Blaka', cursive;
+    font-size: 22px; /* Aumentado de 18px */
+    color: #d4bc96;
+    background: transparent;
+    border: none;
+    width: 90%;
+    text-align: center;
+    outline: none;
+}
+
+.diamond-text {
+    font-family: 'Old English Text MT', 'Engravers Old English', cursive;
+    font-size: 26px; /* Aumentado de 20px */
+    color: #fff;
+    background: transparent;
+    border: none;
+    width: 90%;
+    text-align: center;
+    outline: none;
+}
+
+/* --- Títulos do Lado de Fora (Corpo, Mente, etc) --- */
+.outer-label {
+    position: absolute;
+    font-family: 'Old English Text MT', 'Engravers Old English', cursive;
+    font-size: 40px; /* Aumentado de 32px */
+    color: #111;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.2);
+    z-index: 3;
+}
+
+/* Afastamos um pouquinho mais os textos externos para não colarem na borda */
+.label-tl { top: -30px; left: -90px; transform: rotate(-45deg); }
+.label-tr { top: -30px; right: -110px; transform: rotate(45deg); }
+.label-bl { bottom: -30px; left: -90px; transform: rotate(45deg); }
+.label-br { bottom: -30px; right: -90px; transform: rotate(-45deg); }
+
+/* =========================================
+   ESTRUTURA DE 3 COLUNAS DA FICHA
+   ========================================= */
+.three-col-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 20px 40px;
+}
+
+.sidebar-left, .sidebar-right {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.central-grid {
+    flex: 1;
+    margin-top: 50px; /* Mantém o hexagrama centralizado */
+}
+
+/* Utilitários */
+.blaka-title { font-family: 'Blaka', cursive; font-size: 26px; color: #3d2616; margin: 0 0 5px 0; }
+.old-title { font-family: 'Old English Text MT', 'Engravers Old English', cursive; font-size: 32px; color: #3d2616; margin: 0 0 10px 0; }
+.central-title { text-align: center; }
+.mt-10 { margin-top: 10px; }
+.mt-30 { margin-top: 30px; }
+
+/* =========================================
+   COLUNA ESQUERDA (Barras e Nível)
+   ========================================= */
+/* Nível e XP */
+.level-box { margin-bottom: 25px; }
+.xp-bar { width: 100%; height: 6px; background-color: #278855; border-radius: 3px; margin: 5px 0; border: 1px solid #111; }
+.xp-text { font-family: 'Blaka', cursive; font-size: 16px; color: #583720; opacity: 0.8; }
+
+/* Barras de Vida e Mana */
+.status-box { margin-bottom: 25px; }
+.bar-row { display: flex; align-items: center; gap: 10px; }
+
+.status-bar {
+    flex: 1;
+    height: 35px;
+    border: 2px solid #111;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.4);
+}
+.health-bar { background-color: #aa0000; }
+.mana-bar { background-color: #3b5998; }
+
+.bar-input {
+    background: transparent; border: none; color: #fff; font-family: 'Blaka', cursive;
+    font-size: 20px; text-align: center; width: 100%; outline: none; text-shadow: 1px 1px 2px #000;
+}
+
+.bar-icon {
+    width: 40px; height: 40px; border-radius: 50%; border: 2px solid #111;
+    background-color: #333; display: flex; justify-content: center; align-items: center;
+    font-size: 20px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.icon-heart { color: #ff3333; }
+.icon-potion { color: #33ccff; }
+
+/* Barra de Reputação */
+.reputacao-box { margin-bottom: 25px; }
+.reputacao-slider {
+    width: 100%; height: 8px; -webkit-appearance: none; background: linear-gradient(to right, #aa0000, #ff8800);
+    border-radius: 4px; outline: none; border: 1px solid #111;
+}
+.reputacao-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none;
+    width: 20px; height: 20px; border-radius: 50%; background: #3d2616; border: 2px solid #d4bc96; cursor: pointer;
+}
+
+/* =========================================
+   COLUNA DIREITA (Pergaminhos)
+   ========================================= */
+.pergaminho-box {
+    /* Troque pelo nome do arquivo do pergaminho que você exportar do seu design */
+    background-image: url('images/pergaminho.png'); 
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    padding: 40px 30px;
+    width: 100%;
+    min-height: 250px;
+}
+
+/* Checkboxes de Vantagens */
+.vantagens-grid { display: flex; flex-direction: column; gap: 8px; }
+.vantagem-row { display: flex; align-items: center; justify-content: space-between; }
+.vantagem-label { font-family: 'Blaka', cursive; font-size: 24px; color: #3d2616; width: 60px; }
+
+/* Transformando checkbox em círculos vazados medievais */
+.circle-check {
+    appearance: none; -webkit-appearance: none;
+    width: 25px; height: 25px; border: 2px solid #3d2616; border-radius: 50%;
+    background-color: rgba(255,255,255,0.3); cursor: pointer;
+}
+.circle-check:checked {
+    background-color: #3d2616;
+    box-shadow: inset 0 0 0 3px #d2bba0; /* Cria um anelzinho dentro quando clicado */
+}
+
+.full-width { width: 100% !important; margin-top: 10px; }

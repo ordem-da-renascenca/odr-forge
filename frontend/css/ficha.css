@@ -1,0 +1,329 @@
+/* =========================================
+   FICHA DE PERSONAGEM
+   ========================================= */
+.ficha-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Avatar e Nomes --- */
+.ficha-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    position: relative; 
+    z-index: 10; 
+}
+
+.ficha-avatar-box {
+    width: 110px;
+    height: 110px;
+    
+    min-width: 110px; 
+    flex-shrink: 0;   
+    
+    border: 4px solid #4a3320;
+    padding: 5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ficha-avatar-box::after {
+    content: "";
+    position: absolute;
+    top: -8px; left: -8px; right: -8px; bottom: -8px;
+    border: 1px solid #4a3320;
+}
+
+.ficha-avatar-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ficha-names {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.name-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.name-group label {
+    font-family: 'Old English Text MT', 'Engravers Old English', cursive;
+    font-size: 20px;
+    color: #3d2616;
+}
+
+.line-input {
+    border: none;
+    border-bottom: 2px solid #4a3320;
+    background: transparent;
+    font-family: 'Blaka', cursive;
+    font-size: 26px;
+    color: #2b1d12;
+    width: 350px;
+    outline: none;
+    padding-bottom: 2px;
+}
+
+/* --- Losangos --- */
+.diamond-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin-top: -180px; 
+}
+
+.grid-center {
+    position: relative;
+    --size: 150px;     
+    --offset: 116px;   
+}
+
+.grid-center::before {
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 650px; height: 650px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.05);
+    z-index: 0;
+}
+
+.diamond-item {
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    transform: translate(-50%, -50%); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.pos-center { top: 0; left: 0; }
+.pos-tl { top: calc(var(--offset) * -1); left: calc(var(--offset) * -1); }
+.pos-tr { top: calc(var(--offset) * -1); left: var(--offset); }
+.pos-l  { top: 0; left: calc(var(--offset) * -2); }
+.pos-r  { top: 0; left: calc(var(--offset) * 2); }
+.pos-bl { top: var(--offset); left: calc(var(--offset) * -1); }
+.pos-br { top: var(--offset); left: var(--offset); }
+
+.diamond-shape {
+    position: absolute;
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    transform: rotate(45deg); 
+    box-sizing: border-box;
+    border: 5px solid #d4bc96; 
+    box-shadow: inset 0 0 0 4px #1a1a1a, 4px 4px 10px rgba(0,0,0,0.5); 
+    z-index: 1;
+}
+
+.black-diamond .diamond-shape { background-color: #1c1c1c; }
+.red-diamond .diamond-shape { background-color: #990000; }
+
+.diamond-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* --- textos editáveis --- */
+.diamond-val {
+    font-family: 'Old English Text MT', 'Engravers Old English', cursive;
+    font-size: 55px; 
+    color: #fff;
+    background: transparent;
+    border: none;
+    width: 90%;
+    text-align: center;
+    outline: none;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    margin-bottom: -5px;
+}
+
+.diamond-sub {
+    font-family: 'Blaka', cursive;
+    font-size: 22px; 
+    color: #d4bc96;
+    background: transparent;
+    border: none;
+    width: 90%;
+    text-align: center;
+    outline: none;
+}
+
+.diamond-text {
+    font-family: 'Old English Text MT', 'Engravers Old English', cursive;
+    font-size: 26px; 
+    color: #fff;
+    background: transparent;
+    border: none;
+    width: 90%;
+    text-align: center;
+    outline: none;
+}
+
+/* --- titulos (corpo, mente, etc) --- */
+.outer-label {
+    position: absolute;
+    font-family: 'Old English Text MT', 'Engravers Old English', cursive;
+    font-size: 40px; 
+    color: #111;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.2);
+    z-index: 3;
+}
+
+/* Afastamos um pouquinho mais os textos externos para não colarem na borda */
+.label-tl { top: -30px; left: -90px; transform: rotate(-45deg); }
+.label-tr { top: -30px; right: -110px; transform: rotate(45deg); }
+.label-bl { bottom: -30px; left: -90px; transform: rotate(45deg); }
+.label-br { bottom: -30px; right: -90px; transform: rotate(-45deg); }
+
+/* =========================================
+   ESTRUTURA DE 3 COLUNAS DA FICHA
+   ========================================= */
+.three-col-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 20px 40px;
+}
+
+.sidebar-left, .sidebar-right {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.central-grid {
+    flex: 1;
+    margin-top: -40px; 
+}
+/* Utilitários */
+.blaka-title { font-family: 'Blaka', cursive; font-size: 26px; color: #3d2616; margin: 0 0 5px 0; }
+.old-title { font-family: 'Old English Text MT', 'Engravers Old English', cursive; font-size: 32px; color: #3d2616; margin: 0 0 10px 0; }
+.central-title { text-align: center; }
+.mt-10 { margin-top: 10px; }
+.mt-30 { margin-top: 30px; }
+
+/* =========================================
+   COLUNA ESQUERDA (Barras e Nível)
+   ========================================= */
+/* Nível e XP */
+.level-box { margin-bottom: 25px; }
+.xp-bar { width: 100%; height: 6px; background-color: #278855; border-radius: 3px; margin: 5px 0; border: 1px solid #111; }
+.xp-text { font-family: 'Blaka', cursive; font-size: 16px; color: #583720; opacity: 0.8; }
+
+/* Barras de Vida e Mana */
+.status-box { margin-bottom: 25px; }
+.bar-row { display: flex; align-items: center; gap: 10px; }
+
+.status-bar {
+    flex: 1;
+    height: 35px;
+    border: 2px solid #111;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.4);
+}
+.health-bar { background-color: #aa0000; }
+.mana-bar { background-color: #3b5998; }
+
+.bar-input {
+    background: transparent; border: none; color: #fff; font-family: 'Blaka', cursive;
+    font-size: 20px; text-align: center; width: 100%; outline: none; text-shadow: 1px 1px 2px #000;
+}
+
+.bar-icon {
+    width: 40px; height: 40px; border-radius: 50%; border: 2px solid #111;
+    background-color: #333; display: flex; justify-content: center; align-items: center;
+    font-size: 20px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.icon-heart { color: #ff3333; }
+.icon-potion { color: #33ccff; }
+
+/* Barra de Reputação */
+.reputacao-box { margin-bottom: 25px; }
+.reputacao-slider {
+    width: 100%; height: 8px; appearance: none; -webkit-appearance: none; background: linear-gradient(to right, #aa0000, #ff8800);
+    border-radius: 4px; outline: none; border: 1px solid #111;
+}
+.reputacao-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none;
+    width: 20px; height: 20px; border-radius: 50%; background: #3d2616; border: 2px solid #d4bc96; cursor: pointer;
+}
+.rep-display {
+    font-family: 'Blaka', cursive;
+    font-size: 22px;
+    color: #3d2616;
+    text-align: center;
+    margin-top: 8px; 
+}
+
+/* =========================================
+   COLUNA DIREITA 
+   ========================================= */
+.pergaminho-box {
+    background-image: url('../assets/fundoquadrado.png'); 
+    
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    padding: 40px 30px; 
+    width: 100%;
+    min-height: 250px;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3); 
+}
+.sidebar-right {
+    margin-top: 110px; 
+}
+
+/* checkboxes de vantagens */
+.vantagens-grid { display: flex; flex-direction: column; gap: 8px; }
+.vantagem-row { display: flex; align-items: center; justify-content: space-between; }
+.vantagem-label { font-family: 'Blaka', cursive; font-size: 24px; color: #3d2616; width: 60px; }
+
+.circle-check {
+    appearance: none; -webkit-appearance: none;
+    width: 25px; height: 25px; border: 2px solid #3d2616; border-radius: 50%;
+    background-color: rgba(255,255,255,0.3); cursor: pointer;
+}
+.circle-check:checked {
+    background-color: #3d2616;
+    box-shadow: inset 0 0 0 3px #d2bba0; 
+}
+
+.full-width { width: 100% !important; margin-top: 10px; }
+
+.resistencias-list {
+    margin-top: -15px; 
+}
+.resistencias-list .full-width {
+    margin-top: 2px !important; 
+}

@@ -1,0 +1,200 @@
+/* =========================================
+   CONTEÚDO PRINCIPAL (HUB DE PERSONAGENS)
+   ========================================= */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.page-title {
+    font-family: 'Blaka', cursive;
+    font-size: 60px;
+    color: #583720;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+    
+    text-shadow: 4px 4px 6px rgba(247, 227, 209, 0.6);
+}
+
+/* CONTAINER DOS CARD */
+.cards-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-image: url('../assets/fundoquadrado.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    
+    /* CONTROLA O TAMANHO === */
+    width: 500px;        
+    min-height: 550px;   
+    
+    padding: 70px 60px; 
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* CONTEÚDO INTERNO DO CARD */
+.card-icon img {
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.card-title {
+    font-family: 'Blaka', cursive;
+    font-size: 40px;
+    color: #2b1d12;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.card-desc {
+    font-size: 30px;
+    line-height: 1.5;
+    color: #8c6849;
+    margin-bottom: auto; 
+}
+
+/* BOTÃO DOS CARDS */
+.card-btn {
+    background-color: #583720;
+    color: #e3cca6;
+    border: none;
+    padding: 12px 25px;
+    width: 100%;
+    font-family: 'Blaka', cursive;
+    font-size: 24px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-top: 25px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.2s ease;
+}
+
+.card-btn:hover {
+    background-color: #2b1d12;
+}
+
+/* =========================================
+   PÁGINA DE PERSONAGENS (MINI CARDS)
+   ========================================= */
+
+.char-cards-container {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    align-self: flex-start; 
+    padding: 0 5%; 
+    
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+/* botão */
+.char-card .card-btn {
+    width: 80%; 
+    padding: 8px 15px; 
+    font-size: 20px; 
+    
+    margin-top: auto;
+    margin-bottom: 10px; 
+}
+
+/* card personagem */
+.char-card {
+    background-image: url('../assets/moldura2.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    
+    width: 320px;
+    height: 480px;
+    
+    padding: 30px 20px;
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.char-card:hover {
+    transform: translateY(-5px);
+}
+
+.char-avatar {
+    width: 120px;
+    height: 120px;
+    border: 8px solid #583720; /* Borda grossa escura */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #d2bba0;
+}
+.char-avatar img {
+    width: 70px;
+    filter: brightness(0) sepia(1) hue-rotate(330deg) saturate(3) brightness(0.3);
+}
+
+/* textos do card */
+.char-name {
+    font-family: 'Blaka', cursive;
+    font-size: 34px;
+    color: #3d2616;
+    letter-spacing: 2px;
+}
+
+.char-class {
+    font-family: 'Blaka', cursive;
+    font-size: 22px;
+    color: #8c6849;
+    margin-bottom: auto; 
+}
+
+/* =========================================
+   "NOVA FICHA" (+)
+   ========================================= */
+
+.char-avatar.faded {
+    border-color: #9c8266;
+}
+
+.char-avatar.faded img {
+    filter: brightness(0) sepia(1) hue-rotate(330deg) saturate(2) brightness(0.6);
+    opacity: 0.8;
+}
+
+/* (+) */
+.new-char-plus {
+    font-family: 'Blaka', cursive;
+    font-size: 150px;
+    color: #583720;
+    line-height: 1;
+    margin-bottom: auto;
+}

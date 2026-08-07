@@ -1,0 +1,158 @@
+/* =========================================
+   TELA DE LOGIN 
+   ========================================= */
+
+.login-body {
+    display: block; 
+    min-height: 100vh;
+    margin: 0;
+    background: none; 
+}
+.login-body::before {
+    display: none; 
+}
+
+.login-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+/* LADO ESQUERDO */
+.login-left {
+    flex: 1; /* ocupa 50% da tela */
+    background-image: url('../assets/paperfundo.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* card onde ficam os campos */
+.login-box {
+    background-color: rgba(204, 163, 114, 0.7); 
+    border-radius: 40px;
+    padding: 40px 60px;
+    width: 100%;
+    max-width: 550px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.login-logo {
+    height: 110px;
+    margin-bottom: 10px;
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.8));
+}
+
+.login-title {
+    font-family: 'Old English Text MT', 'Engravers Old English', 'UnifrakturMaguntia', cursive; 
+    font-size: 55px; 
+    color: #111;
+    line-height: 1.1;
+    margin-bottom: 5px;
+}
+
+.destaque-titulo {
+    color: #c09d73; 
+    -webkit-text-stroke: 0.6px #4e3727; 
+}
+
+.login-subtitle {
+    font-family: 'Blaka', cursive;
+    font-size: 22px;
+    color: #583720d8;
+    margin-bottom: 30px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input-group label {
+    font-family: 'Blaka', cursive;
+    font-size: 24px;
+    color: #583720;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.ribbon-input {
+    width: 100%;
+    height: 60px;
+    background-color: #caaf8e;
+    border: none;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 25px) 50%, 100% 100%, 0 100%, 25px 50%);
+    padding: 0 40px; /* garante que o texto digitado não fique em cima do corte */
+    font-family: 'Blaka', cursive;
+    font-size: 26px;
+    color: #2b1d12;
+    outline: none;
+}
+
+.ribbon-input:focus {
+    background-color: #b59268;
+}
+
+/* =========================================
+   CORRIGINDO O FUNDO BRANCO DO AUTOFILL
+   ========================================= */
+.ribbon-input:-webkit-autofill,
+.ribbon-input:-webkit-autofill:hover, 
+.ribbon-input:-webkit-autofill:focus, 
+.ribbon-input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 50px #d1b18a inset !important;
+    -webkit-text-fill-color: #2b1d12 !important;
+    font-family: 'Blaka', cursive !important;
+}
+
+/* botao */
+.login-btn {
+    background-color: #745737;
+    color: #111;
+    border: none;
+    padding: 15px;
+    font-family: 'Blaka', cursive;
+    font-size: 34px;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 4px 4px 5px rgba(0,0,0,0.3);
+    transition: background-color 0.2s ease;
+}
+
+.login-btn:hover {
+    background-color: #a6845c;
+}
+
+.login-links {
+    margin-top: 25px;
+    font-family: 'Blaka', cursive;
+    font-size: 24px;
+}
+
+.login-links a {
+    color: #583720;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.login-links a:hover {
+    color: #111;
+}
+
+/* LADO DIREITO - DESENHO JULY*/
+.login-right {
+    flex: 1; 
+    background-size: cover;
+    background-position: center;
+}

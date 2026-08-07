@@ -28,7 +28,7 @@ body::before {
     height: 100%;
     z-index: -1; /* joga a textura para trás de tudo */
     
-    background-image: url('../assets/paperfundo.png'); 
+    background-image: url('../../assets/paperfundo.png'); 
     background-size: cover;
     background-position: center;
     opacity: 0.3; 
